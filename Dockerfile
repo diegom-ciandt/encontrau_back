@@ -1,7 +1,7 @@
 FROM public.ecr.aws/lambda/python:3.9
 
 # Copy function code
-COPY app.py ${LAMBDA_TASK_ROOT}
+COPY src/hello_world.py ${LAMBDA_TASK_ROOT}
 
 # Avoid cache purge by adding requirements first
 COPY requirements.txt ${LAMBDA_TASK_ROOT}
@@ -21,4 +21,4 @@ ENV AWS_SECRET_ACCESS_KEY $AWS_SECRET_ACCESS_KEY
 ENV AWS_DEFAULT_REGION $AWS_DEFAULT_REGION
 
 # Set the CMD to your handler (could also be done as a parameter override outside of the Dockerfile)
-CMD [ "hello_world_handler" ]
+CMD [ "hello_world.hello_world_handler" ]

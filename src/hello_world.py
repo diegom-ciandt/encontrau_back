@@ -6,5 +6,3 @@ def hello_world_handler(event, context):
         'statusCode': 200,
         'body': json.dumps('Encontrau says HELLO WORLD from github actions!')
     }
-
-hello_world_handler(None, None)
